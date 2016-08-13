@@ -18,6 +18,7 @@ Liste des services actuellement disponibles :
 - hms_irc_
 - hms_reddit_
 - hms_ping_
+- hms_spacestatus_
 
 Servivces à venir/réaliser :
 
@@ -28,3 +29,4 @@ Servivces à venir/réaliser :
 .. _hms_irc: https://github.com/haum/hms_irc
 .. _hms_reddit: https://github.com/haum/reddithaum
 .. _hms_ping: https://github.com/haum/hms_ping
+.. _hms_spacestatus: https://github.com/haum/hms_spacestatus
