@@ -19,6 +19,7 @@ Liste des services actuellement disponibles :
 - hms_reddit_
 - hms_ping_
 - hms_spacestatus_
+- hms_website_
 
 Servivces à venir/réaliser :
 
@@ -30,3 +31,4 @@ Servivces à venir/réaliser :
 .. _hms_reddit: https://github.com/haum/reddithaum
 .. _hms_ping: https://github.com/haum/hms_ping
 .. _hms_spacestatus: https://github.com/haum/hms_spacestatus
+.. _hms_website:  https://github.com/haum/hms_website
