@@ -1,0 +1,8 @@
+
+- hosts: scaleway.haum.org
+  user: microjoe
+  roles:
+      - role: simple_microservice
+        service_name: hms_ping
+      - role: simple_microservice
+        service_name: hms_logger
