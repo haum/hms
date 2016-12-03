@@ -7,7 +7,7 @@ RabbitMQ.
 Architecture actuelle
 =====================
 
-.. image:: https://raw.githubusercontent.com/haum/hms/master/hms.png
+.. image:: https://raw.githubusercontent.com/haum/hms/master/doc/images/hms.png
     :alt: Carte conceptuelle des services
 
 Micro-services
