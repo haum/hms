@@ -6,3 +6,7 @@
         service_name: hms_ping
       - role: simple_microservice
         service_name: hms_logger
+      - role: simple_microservice
+        service_name: hms_irc
+      - role: simple_microservice
+        service_name: hms_spacestatus
