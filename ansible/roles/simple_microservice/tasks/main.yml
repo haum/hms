@@ -18,3 +18,10 @@
   args:
       chdir: /home/{{ service_name }}/{{ service_name }}
   when: git_updated|changed
+
+- name: restart systemd unit
+  become: yes
+  service:
+      name: "{{ service_name }}"
+      state: restarted
+  when: git_updated|changed
