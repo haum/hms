@@ -7,6 +7,7 @@
       repo: https://github.com/haum/{{ service_name }}.git
       dest: /home/{{ service_name }}/{{ service_name }}
       update: yes
+      version: "{{ version }}"
   register: git_updated
 
 # Using sh instead of bash, so do NOT use `source` for venv
