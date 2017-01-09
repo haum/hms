@@ -8,7 +8,5 @@
         service_name: hms_logger
       - role: simple_microservice
         service_name: hms_irc
-        version: better_irc
       - role: simple_microservice
         service_name: hms_spacestatus
-        version: better_irc
