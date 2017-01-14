@@ -1,6 +1,6 @@
 
 # Pull from master branch
-- name: update git repo
+- name: update git repo {{ service_name }}
   become: yes
   become_user: "{{ service_name }}"
   git:
