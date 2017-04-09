@@ -28,7 +28,7 @@
 
 - name: update systemd unit
   become: yes
-  shell: make install
+  shell: make install && systemctl daemon-reload
   args:
     chdir: /home/{{ service_name }}/{{ service_name }}
   when: git_updated|changed
