@@ -12,3 +12,5 @@
         service_name: hms_spacestatus
       - role: simple_microservice
         service_name: hms_agenda
+      - role: simple_microservice
+        service_name: hms_mastodon
