@@ -8,9 +8,12 @@
         service_name: hms_logger
       - role: simple_microservice
         service_name: hms_irc
+        version: v2.4
       - role: simple_microservice
         service_name: hms_spacestatus
+        version: v2.0
       - role: simple_microservice
         service_name: hms_agenda
       - role: simple_microservice
         service_name: hms_mastodon
+        version: v1.2.1
