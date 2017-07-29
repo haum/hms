@@ -6,6 +6,7 @@
         service_name: hms_ping
       - role: simple_microservice
         service_name: hms_logger
+        version: v1.1
       - role: simple_microservice
         service_name: hms_irc
         version: v2.5
@@ -14,6 +15,7 @@
         version: v2.1
       - role: simple_microservice
         service_name: hms_agenda
+        version: v1.0
       - role: simple_microservice
         service_name: hms_mastodon
         version: v1.2.1
