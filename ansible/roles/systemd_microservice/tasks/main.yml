@@ -1,0 +1,62 @@
+
+# Create an user account for the microservice
+- name: create user
+  become: yes
+  user:
+    name: "{{ service_name }}"
+    shell: /bin/bash
+
+# Pull from master branch
+- name: update git repo {{ service_name }}
+  become: yes
+  become_user: "{{ service_name }}"
+  git:
+      repo: https://github.com/haum/{{ service_name }}.git
+      dest: /home/{{ service_name }}/{{ service_name }}
+      update: yes
+      version: "{{ version }}"
+  register: git_updated
+
+# Create virtualenv
+- name: create virtualenv
+  become: yes
+  become_user: "{{ service_name }}"
+  shell: virtualenv -ppython3 venv
+  args:
+    chdir: /home/{{ service_name }}/{{ service_name }}
+    creates: /home/{{ service_name }}/{{ service_name }}/venv
+
+- name: install run script
+  become: yes
+  template:
+    src: templates/run.sh.j2
+    dest: /home/{{ service_name }}/run.sh
+    mode: 0755
+
+- name: install systemd unit
+  become: yes
+  template:
+    src: templates/hms_microservice.service.j2
+    dest: /lib/systemd/system/{{ service_name }}.service
+  register: systemd_updated
+
+- name: update systemd unit
+  become: yes
+  shell: systemctl daemon-reload
+  when: systemd_updated|changed
+
+# Using sh instead of bash, so do NOT use `source` for venv
+- name: reinstall upon update
+  become: yes
+  become_user: "{{ service_name }}"
+  shell: . venv/bin/activate && pip install --upgrade .
+  args:
+    chdir: /home/{{ service_name }}/{{ service_name }}
+  when: git_updated|changed
+
+- name: restart systemd unit
+  become: yes
+  service:
+      name: "{{ service_name }}"
+      state: restarted
+  when: git_updated|changed

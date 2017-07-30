@@ -7,9 +7,9 @@
       - role: simple_microservice
         service_name: hms_logger
         version: v1.1
-      - role: simple_microservice
+      - role: systemd_microservice
         service_name: hms_irc
-        version: v2.5
+        version: v2.6
       - role: simple_microservice
         service_name: hms_spacestatus
         version: v2.1

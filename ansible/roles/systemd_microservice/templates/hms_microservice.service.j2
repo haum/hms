@@ -1,0 +1,14 @@
+[Unit]
+Description={{ service_name }} microservice
+After=mutli-user.target
+Requires=multi-user.target
+
+[Service]
+Type=simple
+User=hms_agenda
+ExecStart=/home/{{ service_name }}/run.sh
+Restart=on-failure
+RestartSec=360
+
+[Install]
+WantedBy=multi-user.target
