@@ -9,7 +9,7 @@
         version: v1.1
       - role: systemd_microservice
         service_name: hms_irc
-        version: v2.6
+        version: v3.0
       - role: simple_microservice
         service_name: hms_spacestatus
         version: v2.1
