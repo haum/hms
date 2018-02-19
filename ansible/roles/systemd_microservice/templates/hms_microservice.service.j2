@@ -1,11 +1,11 @@
 [Unit]
 Description={{ service_name }} microservice
-After=mutli-user.target
-Requires=multi-user.target
+After=mutli-user.target rabbitmq-server.service
+Requires=multi-user.target rabbitmq-server.service
 
 [Service]
 Type=simple
-User=hms_agenda
+User={{ service_name }}
 ExecStart=/home/{{ service_name }}/run.sh
 Restart=on-failure
 RestartSec=360
